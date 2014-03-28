@@ -1,0 +1,23 @@
+<head>
+  <title>renderTest</title>
+</head>
+
+<body>
+    {{> firstLevelTemplate}}
+</body>
+
+<template name="firstLevelTemplate">
+    {{#if levelOne}}
+        {{> secondLevelTemplate}}
+    {{/if}}
+</template>
+
+<template name="secondLevelTemplate">
+    {{#if levelTwo}}
+        {{#if levelOne}}
+            <p>Level one is true</p>
+        {{else}}
+            <p>Level one is false</p>
+        {{/if}}
+    {{/if}}
+</template>
